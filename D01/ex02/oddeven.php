@@ -3,7 +3,7 @@
 while (1)
 {
 	echo "Entrez un nombre: ";
-	$handle = fopen ("php://stdin","r");
+	$handle = fopen("php://stdin","r");
 	$num = fgets($handle);
 	if ($num == NULL)
 		break;

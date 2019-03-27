@@ -9,12 +9,15 @@ function epur_str($epur)
 	return ($epur);
 }
 
-array_splice($argv, 0, 1);
-foreach($argv as &$elem)
-	$elem = epur_str($elem);
-$str = implode(" ", $argv);
-$str = explode(" ", $str);
-sort($str);
-foreach($str as $elem)
+if ($argc > 1)
+{
+	array_splice($argv, 0, 1);
+	foreach($argv as &$elem)
+		$elem = epur_str($elem);
+	$str = implode(" ", $argv);
+	$str = explode(" ", $str);
+	sort($str);
+	foreach($str as $elem)
 	echo "$elem\n";
+}
 ?>

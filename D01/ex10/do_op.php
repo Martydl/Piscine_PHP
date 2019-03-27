@@ -1,14 +1,20 @@
 #!/usr/bin/php
 <?php
 
+function num($char)
+{
+	if (is_numeric($char) || $char == '+' || $char == '-')
+		return (1);
+	return (0);
+}
+
 function format($num)
 {
 	$num = str_split($num);
 	foreach ($num as &$char)
-		if (!is_numeric($char))
+		if (!is_numeric($char) && $char != '+' && $char != '-')
 			$char = '';
-	$num = array_filter($num, "is_numeric");
-	print_r($num);
+	$num = array_filter($num, "num");
 	$num = implode($num);
 	return ($num);
 }
@@ -44,5 +50,5 @@ if ($argc == 4)
 	echo "$res\n";
 }
 else
-	echo "Incorrect Parameters";
+	echo "Incorrect Parameters\n";
 ?>
