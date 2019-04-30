@@ -1,0 +1,57 @@
+#menu{
+	width: 125px;
+}
+
+.title {
+	background-color: lightgray;
+	pointer-events:none;
+}
+
+#menu ul{
+	padding: 0;
+	width: 125px;
+	border: 1px solid;
+	margin:0px;
+}
+
+#menu ul li{
+	position: relative;
+	list-style: none;
+	border-bottom:1px solid;
+}
+
+#menu ul ul{
+	position: absolute;
+	top: -1px;
+	left: 125px;
+	display: none;
+}
+
+#menu ul.niveau1 li.sous-menu:hover ul.niveau2,
+#menu ul.niveau2 li.sous-menu:hover ul.niveau3,
+#menu ul.niveau3 li.sous-menu:hover ul.niveau4,
+#menu ul.niveau4 li.sous-menu:hover ul.niveau5,
+#menu ul.niveau5 li.sous-menu:hover ul.niveau6{
+	display: block;
+}
+
+li:hover{
+	background-color: lightgray;
+}
+
+li.CSS:hover{
+	background-color: chartreuse;
+}
+
+
+li.HTML:hover{
+	background-color: chartreuse;
+}
+
+li.js:hover{
+	background-color: red;
+}
+
+li.autre:hover{
+	background-color: red;
+}

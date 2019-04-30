@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<head>
+		<title>ex00</title>
+		<style>
+			#balloon {
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				border-radius: 100%;
+				margin: 250px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="balloon" onclick="changeColor(this, 1) ; changeSize(this, 10)" onmouseout="changeColor(this, -1) ; changeSize(this, -5)"></div>
+	</body>
+</html>
+
+<script>
+		var colors = ["red", "green", "blue"];
+		var size = 200;
+		var i = 0;
+		function changeColor(elem, diff) {
+			i += diff;
+			if (i > 2)
+				i = 0;
+			if (i < 0)
+				i = 2;
+			elem.style.backgroundColor = colors[i];
+		}
+		function changeSize(elem, diff) {
+			size += diff;
+			if (size > 420)
+				size = 200;
+			if (size < 200)
+				size = 200;
+			elem.style.height = size + "px";
+			elem.style.width = size + "px";
+		}
+</script>

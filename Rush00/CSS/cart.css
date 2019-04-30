@@ -1,0 +1,61 @@
+body{
+	background-color: #ffffff;
+}
+
+figure{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+	height: 250px;
+	border: 2px solid;
+	border-radius: 5px;
+}
+
+figure img{
+	position: absolute;
+	top: 25px;
+	left: 50px;
+	margin-left: 3%;
+	width: 200px;
+	height: 200px;
+}
+
+figcaption{
+	position: absolute;
+	top: 20px;
+	right: 50px;
+	width: 250px;
+	display: flex;
+	flex-direction: column;
+}
+
+.button{
+	position: absolute;
+}
+
+.del{
+	position: absolute;
+	top: -5px;
+	right: -25px;
+}
+
+.name{
+	font-weight: 900;
+	font-size: 25px;
+}
+
+.price{
+	display: flex;
+	justify-content: space-around;
+}
+
+.links{
+	display: flex;
+	justify-content: space-evenly;
+	align-items: flex-end;
+}
+
+.links p{
+	font-size: 20px;
+}

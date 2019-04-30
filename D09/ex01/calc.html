@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ex01</title>
+	</head>
+	<body>
+		<input id="left" type="text" autofocus>
+		<select name="operator" id="op">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="%">%</option>
+		</select>
+		<input id="right" type="text">
+		<input id="submit" type="submit" value="Try me!" onclick="calc()">
+	</body>
+</html>
+
+<script>
+
+	function doop(x, ope, y)
+	{
+		if (ope == '+')
+			return (x + y);
+		if (ope == '-')
+			return (x - y);
+		if (ope == '*')
+			return (x * y);
+		if (ope == '/')
+			return (x / y);
+		if (ope == '%')
+			return (x % y);
+	}
+
+	function calc() {
+		var x = Number(document.querySelector("#left").value);
+		var ope = document.getElementById("op").value;
+		var y = Number(document.querySelector("#right").value);
+		if (isNaN(x) || isNaN(y) || x < 0 || y < 0)
+			alert("Error :(");
+		else if ((ope == "/" || ope == '%') && y == 0)
+			alert("It’s over 9000!");
+		else
+		{
+			var res = doop(x, ope, y);
+			console.log(res);
+			alert(res);
+		}
+	}
+
+	setInterval(function() { alert("Please, use me...") }, 30000)
+
+</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ex01</title>
+		<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<input id="left" type="text" autofocus>
+		<select name="operator" id="op">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="%">%</option>
+		</select>
+		<input id="right" type="text">
+		<input id="submit" type="submit" value="Try me!">
+	</body>
+</html>
+
+<script>
+	$('#submit').click(calc);
+
+	function doop(x, ope, y)
+	{
+		if (ope == '+')
+			return (x + y);
+		if (ope == '-')
+			return (x - y);
+		if (ope == '*')
+			return (x * y);
+		if (ope == '/')
+			return (x / y);
+		if (ope == '%')
+			return (x % y);
+	}
+
+	function calc(){
+		var left = parseInt($('#left').val());
+		var right = parseInt($('#right').val());
+		var ope = $('#op').val();
+
+		if (isNaN(left) || isNaN(right) || left < 0 || right < 0)
+			alert("Error :(");
+		else if ((ope == "/" || ope == '%') && y == 0)
+			alert("It’s over 9000!");
+		else
+		{
+			var res = doop(left, ope, right);
+			console.log(res);
+			alert(res);
+		}
+	}
+</script>

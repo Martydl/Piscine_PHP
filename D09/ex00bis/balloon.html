@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+	<head>
+		<title>ex00</title>
+		<style>
+			#balloon {
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				border-radius: 100%;
+				margin: 250px auto;
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div id="balloon"></div>
+	</body>
+</html>
+
+<script>
+		var size = 200;
+		var colors = ["red", "green", "blue"]
+		var i = 0;
+
+			$('#balloon').click(inflate);
+			$('#balloon').mouseout(deflate);
+			function update() {
+				$('#balloon').width(size);
+				$('#balloon').height(size);
+				$('#balloon').css("background-color", colors[i])
+			}
+			function inflate() {
+				i++;
+				if (i > 2)
+					i = 0;
+				size += 10;
+				if (size > 420)
+					size = 200;
+				update();
+			}
+			function deflate() {
+				i--;
+				if (i < 0)
+					i = 2;
+				if (size > 200)
+					size -= 5;
+				update();
+			}
+	</script>
